@@ -113,7 +113,7 @@ const API = 'https://script.google.com/macros/s/AKfycbzIh48BuGIzHHHWt9g99MVBhRoc
 const app = document.getElementById('app');
 const q = new URLSearchParams(location.search);
 const MODO = q.get('v') ? 'voucher' : 'validar';
-const CODIGO = (q.get('v') || q.get('c') || '').trim().toUpperCase();
+const CODIGO = (q.get('v') || q.get('cod') || q.get('c') || '').trim().toUpperCase();
 
 function esc(s) {
   return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -257,7 +257,7 @@ async function iniciar() {
   if (!CODIGO) { pantallaRechazo('invalido', 'Este link no tiene un voucher. Escaneá el QR del voucher.'); return; }
   cargando('Revisando voucher…');
   try {
-    const d = await pedir({ api: MODO, c: CODIGO });
+    const d = await pedir({ api: MODO, cod: CODIGO });
     if (MODO === 'voucher' && d.voucher) return pantallaVoucher(d);
     if (d.estado === 'ok') return pantallaValida(d);
     pantallaRechazo(d.estado, d.motivo);
@@ -272,7 +272,7 @@ async function canjear() {
   if (!sel.value) { err.textContent = 'Elegí tu local antes de canjear.'; sel.focus(); return; }
   btn.disabled = true; btn.textContent = 'Canjeando…';
   try {
-    const d = await pedir({ api: 'canjear', c: CODIGO, local: sel.value });
+    const d = await pedir({ api: 'canjear', cod: CODIGO, local: sel.value });
     if (d.estado === 'canjeado') return pantallaCanjeado(d);
     if (d.estado === 'reintentar') { err.textContent = d.detalle; btn.disabled = false; btn.textContent = 'Canjear'; return; }
     pantallaRechazo(d.estado, d.motivo);
