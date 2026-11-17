@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Voucher de cumpleaños · TEMPLE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Montserrat:wght@400;500;700;800;900&display=swap">
+<style>
+:root{--rosa:#D41367;--verde:#18988B;--verde-osc:#0c5e56;--amarillo:#FFDD00;--negro:#231F20;--pizarra:#323E48;--blanco:#F8F7F7;
+--f-tit:Oswald,'Arial Narrow',Impact,sans-serif;--f-txt:Montserrat,'Helvetica Neue',Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%}
+body{background:var(--pizarra);font-family:var(--f-txt);-webkit-font-smoothing:antialiased;color:var(--negro)}
+.tit{font-family:var(--f-tit);font-weight:700;text-transform:uppercase;line-height:.92;margin:0}
+.app{max-width:440px;margin:0 auto;min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;padding-bottom:env(safe-area-inset-bottom,0px)}
+.claro{background:var(--blanco)}
+
+/* cargando */
+.cargando{background:var(--blanco);align-items:center;justify-content:center;gap:16px;text-align:center;padding:24px}
+.ruedita{width:44px;height:44px;border-radius:50%;border:5px solid rgba(35,31,32,.15);border-top-color:var(--rosa);animation:gira .8s linear infinite}
+@keyframes gira{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.ruedita{animation-duration:2.4s}}
+.cargando p{margin:0;font-weight:700}
+
+/* 01 voucher */
+.v{background:var(--pizarra);color:var(--blanco)}
+.v-head{background:var(--rosa);padding:calc(48px + env(safe-area-inset-top,0px)) 24px 96px;display:flex;flex-direction:column;gap:14px}
+.v-logo{width:150px;height:auto;display:block;filter:brightness(0) invert(1);margin-bottom:4px}
+.logo-txt{font-size:40px;color:var(--blanco)}
+.chip{align-self:flex-start;background:var(--negro);color:var(--amarillo);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase;padding:6px 10px;white-space:nowrap}
+.v-head .tit{font-size:58px;color:var(--blanco);text-wrap:balance}
+.v-benef{margin:0;font-size:17px;line-height:1.35;font-weight:500}
+.v-benef strong{font-weight:900}
+.v-qr{margin:-72px 20px 0;position:relative;background:var(--blanco);border-radius:8px;box-shadow:inset 0 0 0 2px var(--negro),0 8px 24px rgba(0,0,0,.25);padding:24px 24px 20px;display:flex;flex-direction:column;align-items:center;gap:12px;color:var(--negro)}
+.v-qr img{width:200px;height:200px;display:block;background:#fff}
+.v-cod{font-family:var(--f-tit);font-weight:600;font-size:clamp(18px,5.6vw,24px);letter-spacing:.03em;white-space:nowrap}
+.v-uso{font-size:13px;font-weight:700;color:var(--rosa);text-transform:uppercase;letter-spacing:.08em}
+.aviso{margin:16px 20px 0;background:var(--negro);color:var(--amarillo);border-radius:6px;padding:12px 14px;font-weight:700;font-size:14px;line-height:1.4}
+.v-datos{padding:24px 24px 0;display:flex;flex-direction:column;gap:14px}
+.v-dato{display:flex;flex-direction:column;gap:3px}
+.v-dato:first-child{padding-bottom:14px;border-bottom:1px dashed rgba(248,247,247,.25)}
+.v-dato b{font-size:16px}
+.lbl{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(248,247,247,.6)}
+.v-firma{padding:24px 24px 0}
+.v-firma div{border-top:2px solid var(--blanco);max-width:280px;padding-top:6px;font-size:13px}
+.v-personal{margin:24px 20px 28px;background:var(--amarillo);color:var(--negro);box-shadow:inset 0 0 0 2px var(--negro);border-radius:6px;padding:16px 18px;display:flex;flex-direction:column;gap:6px}
+.v-personal .tit{font-size:22px;line-height:1}
+.v-personal span{font-size:14px;line-height:1.45}
+
+/* 02 y 04 */
+.head{padding:calc(56px + env(safe-area-inset-top,0px)) 24px 28px;color:var(--blanco);display:flex;flex-direction:column;gap:12px}
+.head.ok{background:var(--verde)}
+.head.no{background:var(--rosa)}
+.head .tit{font-size:58px}
+.head p{margin:0;font-size:16px;line-height:1.4;font-weight:500}
+.circ{width:64px;height:64px;border-radius:999px;background:var(--blanco);display:flex;align-items:center;justify-content:center;font-size:36px;font-weight:900;line-height:1}
+.ok .circ{color:var(--verde)}
+.no .circ{color:var(--rosa)}
+.cuerpo{flex:1;padding:20px 24px 24px;display:flex;flex-direction:column;color:var(--negro)}
+.fila{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px dashed rgba(35,31,32,.2)}
+.fila span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(35,31,32,.6);padding-top:2px}
+.fila b{font-size:15px;text-align:right}
+label{margin-top:20px;margin-bottom:8px;font-size:14px;font-weight:700}
+.sel{position:relative}
+.sel::after{content:"▼";position:absolute;right:16px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:14px}
+select{appearance:none;-webkit-appearance:none;width:100%;height:52px;border:none;border-radius:6px;box-shadow:inset 0 0 0 2px var(--negro);background:#fff;padding:0 44px 0 14px;font-family:inherit;font-size:16px;color:var(--negro)}
+select:focus{box-shadow:inset 0 0 0 2px var(--rosa);outline:none}
+.error{color:var(--rosa);font-weight:700;font-size:14px;margin:10px 0 0;min-height:1.2em}
+.esp{flex:1;min-height:24px}
+button{width:100%;height:64px;border:none;border-radius:6px;background:var(--verde);color:var(--blanco);font-family:var(--f-tit);font-weight:700;font-size:30px;letter-spacing:.06em;text-transform:uppercase;box-shadow:0 5px 0 var(--verde-osc);cursor:pointer;transition:transform .12s ease,box-shadow .12s ease}
+button:active{transform:translateY(3px);box-shadow:0 2px 0 var(--verde-osc)}
+button:disabled{opacity:.7}
+button:focus-visible{outline:3px solid var(--amarillo);outline-offset:3px}
+button.oscuro{background:var(--negro);box-shadow:0 5px 0 #000;font-size:24px}
+.nota{margin:14px 0 0;font-size:13px;line-height:1.4;text-align:center;color:rgba(35,31,32,.7)}
+
+/* 03 */
+.listo{background:var(--verde);color:var(--blanco);padding:calc(96px + env(safe-area-inset-top,0px)) 28px 40px;align-items:center;text-align:center;gap:20px}
+.circ.xl{width:132px;height:132px;font-size:84px;color:var(--verde);box-shadow:0 0 0 8px rgba(248,247,247,.25)}
+.listo .tit{font-size:60px}
+.listo p{margin:0;font-size:18px;font-weight:500;line-height:1.35}
+.listo p strong{font-weight:900}
+.tarjeta{width:100%;margin-top:8px;background:var(--blanco);color:var(--negro);border-radius:6px;box-shadow:inset 0 0 0 2px var(--negro);padding:6px 18px;text-align:left}
+.tarjeta .fila{padding:12px 0}
+.tarjeta .fila:last-child{border-bottom:none}
+.listo .pie{font-size:14px;line-height:1.45}
+
+/* 04 */
+.mot-lbl{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--rosa)}
+.mot-txt{font-size:20px;font-weight:700;line-height:1.35;margin:8px 0 20px}
+.lista{border-top:1px dashed rgba(35,31,32,.2)}
+.op{display:flex;align-items:center;gap:12px;padding:12px 0;border-bottom:1px dashed rgba(35,31,32,.2);opacity:.45;font-size:15px;font-weight:500}
+.op.on{opacity:1}
+.box{width:22px;height:22px;flex:none;border-radius:4px;box-shadow:inset 0 0 0 2px var(--negro);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;color:var(--blanco)}
+.on .box{background:var(--rosa)}
+.negro{background:var(--negro);color:var(--blanco);border-radius:6px;padding:16px 18px;font-size:14px;line-height:1.45}
+.negro strong{color:var(--amarillo)}
+</style>
+</head>
+<body>
+<main id="app" class="app cargando" aria-live="polite">
+  <div class="ruedita" role="img" aria-label="Cargando"></div>
+  <p>Cargando voucher…</p>
+</main>
+
+<script>
+/* Dirección de la app de Google (Implementar → Administrar implementaciones → VOUCHER) */
+const API = 'https://script.google.com/macros/s/AKfycbzIh48BuGIzHHHWt9g99MVBhRoccfR1ST4XcbuZBlNYIzpdyFdIMBDqJ_tdRjcPhe38/exec';
+
+const app = document.getElementById('app');
+const q = new URLSearchParams(location.search);
+const MODO = q.get('v') ? 'voucher' : 'validar';
+const CODIGO = (q.get('v') || q.get('c') || '').trim().toUpperCase();
+
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+// credentials:'omit' = no manda las cuentas de Google del celu. Por eso funciona en cualquier teléfono.
+async function pedir(params) {
+  const r = await fetch(API + '?' + new URLSearchParams(params), { credentials: 'omit', redirect: 'follow', cache: 'no-store' });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
+}
+
+function mostrar(clase, html) {
+  app.className = 'app ' + clase;
+  app.innerHTML = html;
+  window.scrollTo(0, 0);
+}
+
+function cargando(texto) {
+  mostrar('cargando', '<div class="ruedita" role="img" aria-label="Cargando"></div><p>' + esc(texto) + '</p>');
+}
+
+function fila(k, v) { return '<div class="fila"><span>' + esc(k) + '</span><b>' + esc(v) + '</b></div>'; }
+
+function firmante(m) {
+  const partes = String(m.firmante || 'Talento y Cultura').split(' · ');
+  return '<strong>' + esc(partes[0]) + '</strong>' +
+    (partes.length > 1 ? ' · ' + esc(partes.slice(1).join(' · ')) : '') +
+    (m.empresa ? ' · ' + esc(m.empresa) : '');
+}
+
+/* 01 · El voucher */
+function pantallaVoucher(d) {
+  const v = d.voucher, m = d.marca;
+  const logo = m.logo ? '<img class="v-logo" src="' + esc(m.logo) + '" alt="TEMPLE">' : '<div class="tit logo-txt">TEMPLE</div>';
+  mostrar('v',
+    '<header class="v-head">' + logo +
+      '<span class="chip">Voucher de cumpleaños</span>' +
+      '<h1 class="tit">¡Feliz cumple, ' + esc(v.nombre) + '!</h1>' +
+      '<p class="v-benef">Válido por <strong>' + esc(v.monto) + '</strong> de consumo en TEMPLE</p>' +
+    '</header>' +
+    '<div class="v-qr"><img src="' + esc(v.qr) + '" alt="Código QR del voucher" width="200" height="200">' +
+      '<div class="v-cod">' + esc(v.codigo) + '</div><div class="v-uso">★ Válido para un solo canje</div></div>' +
+    (d.estado !== 'ok' ? '<div class="aviso">' + esc(d.motivo) + '</div>' : '') +
+    '<div class="v-datos">' +
+      '<div class="v-dato"><span class="lbl">Titular</span><b>' + esc(v.nombre + ' ' + v.apellido) + (v.dni ? ' · DNI ' + esc(v.dni) : '') + '</b></div>' +
+      '<div class="v-dato"><span class="lbl">Vigencia</span><b>Hasta el ' + esc(v.vence) + ' · Locales propios y franquicias</b></div>' +
+    '</div>' +
+    '<div class="v-firma"><div>' + firmante(m) + '</div></div>' +
+    '<div class="v-personal"><span class="tit">Para el personal del local</span>' +
+      '<span>Escaneá el QR con la cámara de tu celu. Si aparece en <strong>verde</strong>, tocá "Canjear". Si aparece en <strong>rojo</strong>, no lo aceptes.</span></div>'
+  );
+}
+
+/* 02 · Escaneo válido */
+function pantallaValida(d) {
+  const v = d.voucher;
+  const opciones = (d.locales || []).map(l => '<option value="' + esc(l) + '">' + esc(l) + '</option>').join('');
+  mostrar('claro',
+    '<header class="head ok"><div class="circ" aria-hidden="true">✓</div><h1 class="tit">Voucher válido</h1>' +
+      '<p>Podés canjearlo. Revisá que el DNI termine en ' + esc(v.dniFin) + '.</p></header>' +
+    '<section class="cuerpo">' +
+      fila('Titular', v.nombre + ' ' + v.apellido) +
+      fila('DNI', 'termina en ' + v.dniFin) +
+      fila('Beneficio', v.monto + ' de consumo') +
+      fila('Vigencia', 'Hasta el ' + v.vence) +
+      fila('Emitido por', d.marca.firmante) +
+      '<label for="local">¿En qué local estás?</label>' +
+      '<div class="sel"><select id="local"><option value="">Elegí el local</option>' + opciones + '</select></div>' +
+      '<p id="error" class="error" role="alert"></p>' +
+      '<div class="esp"></div>' +
+      '<button id="btn" type="button">Canjear</button>' +
+      '<p class="nota">Al tocar Canjear, el voucher queda usado y ya no sirve.</p>' +
+    '</section>'
+  );
+  document.getElementById('btn').addEventListener('click', canjear);
+}
+
+/* 03 · Confirmación */
+function pantallaCanjeado(d) {
+  const v = d.voucher, c = d.canje;
+  mostrar('listo',
+    '<div class="circ xl" aria-hidden="true">✓</div>' +
+    '<h1 class="tit">¡Listo!<br>Canjeado</h1>' +
+    '<p>Entregá el beneficio a <strong>' + esc(v.nombre + ' ' + v.apellido) + '</strong>.</p>' +
+    '<div class="tarjeta">' + fila('Fecha', c.fecha) + fila('Hora', c.hora) + fila('Local', c.local) + fila('Beneficio', v.monto + ' de consumo') + '</div>' +
+    '<div class="esp"></div>' +
+    '<p class="pie">No hace falta guardar nada. El canje ya quedó registrado para la rendición con la marca.</p>'
+  );
+}
+
+/* 04 · No lo aceptes */
+function pantallaRechazo(estado, motivo) {
+  const ops = [['usado', 'Ya canjeado'], ['vencido', 'Vencido'], ['invalido', 'Código no emitido por TEMPLE']];
+  if (estado === 'anulado') ops.push(['anulado', 'Anulado por Talento y Cultura']);
+  mostrar('claro',
+    '<header class="head no"><div class="circ" aria-hidden="true">✗</div><h1 class="tit">No lo aceptes</h1></header>' +
+    '<section class="cuerpo">' +
+      '<span class="mot-lbl">Motivo</span>' +
+      '<div class="mot-txt">' + esc(motivo || 'Este código no fue emitido por TEMPLE.') + '</div>' +
+      '<div class="lista">' + ops.map(o => '<div class="op' + (o[0] === estado ? ' on' : '') + '"><span class="box">' + (o[0] === estado ? '✗' : '') + '</span><span>' + esc(o[1]) + '</span></div>').join('') + '</div>' +
+      '<div class="esp"></div>' +
+      '<div class="negro">Si la persona cree que es un error, que escriba a <strong>Talento y Cultura</strong>.</div>' +
+    '</section>'
+  );
+}
+
+/* Sin conexión */
+function pantallaSinConexion(reintentar) {
+  mostrar('claro',
+    '<header class="head no"><div class="circ" aria-hidden="true">!</div><h1 class="tit">Sin conexión</h1>' +
+      '<p>No pudimos revisar el voucher. Revisá que el celu tenga internet.</p></header>' +
+    '<section class="cuerpo"><div class="esp"></div>' +
+      '<button id="reintentar" class="oscuro" type="button">Probar de nuevo</button>' +
+      '<p class="nota">Si sigue sin andar, no entregues el beneficio todavía.</p></section>'
+  );
+  document.getElementById('reintentar').addEventListener('click', reintentar);
+}
+
+async function iniciar() {
+  if (!CODIGO) { pantallaRechazo('invalido', 'Este link no tiene un voucher. Escaneá el QR del voucher.'); return; }
+  cargando('Revisando voucher…');
+  try {
+    const d = await pedir({ api: MODO, c: CODIGO });
+    if (MODO === 'voucher' && d.voucher) return pantallaVoucher(d);
+    if (d.estado === 'ok') return pantallaValida(d);
+    pantallaRechazo(d.estado, d.motivo);
+  } catch (e) {
+    pantallaSinConexion(iniciar);
+  }
+}
+
+async function canjear() {
+  const sel = document.getElementById('local'), err = document.getElementById('error'), btn = document.getElementById('btn');
+  err.textContent = '';
+  if (!sel.value) { err.textContent = 'Elegí tu local antes de canjear.'; sel.focus(); return; }
+  btn.disabled = true; btn.textContent = 'Canjeando…';
+  try {
+    const d = await pedir({ api: 'canjear', c: CODIGO, local: sel.value });
+    if (d.estado === 'canjeado') return pantallaCanjeado(d);
+    if (d.estado === 'reintentar') { err.textContent = d.detalle; btn.disabled = false; btn.textContent = 'Canjear'; return; }
+    pantallaRechazo(d.estado, d.motivo);
+  } catch (e) {
+    // Antes de reintentar se vuelve a consultar: si el canje sí se registró, va a figurar como usado.
+    err.textContent = 'No se pudo confirmar el canje. Revisá la conexión y tocá Canjear de nuevo.';
+    btn.disabled = false; btn.textContent = 'Canjear';
+  }
+}
+
+iniciar();
+</script>
+</body>
+</html>
